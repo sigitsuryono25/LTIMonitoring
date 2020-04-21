@@ -24,40 +24,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp">
-
                     <TextView
                         android:id="@+id/welcome"
+                        android:padding="5dp"
                         android:layout_width="match_parent"
+                        android:text="@string/welcome_administrator"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_toStartOf="@id/notification"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-
-                    <ImageView
-                        android:id="@+id/notification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:contentDescription="@string/app_name"
-                        android:tint="@color/colorAccent"
-                        app:srcCompat="@drawable/ic_notifications" />
-
-                    <ImageView
-                        android:id="@+id/dots"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/notification"
-                        android:layout_alignEnd="@id/notification"
-                        android:visibility="gone"
-                        app:srcCompat="@drawable/ic_dots" />
-                </RelativeLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -65,7 +38,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/masuk"
+                        android:id="@+id/recap"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -92,7 +65,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/pulang"
+                        android:id="@+id/pengumuman"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -120,7 +93,7 @@
                 </LinearLayout>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/history"
+                    android:id="@+id/mitra"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="5dp"

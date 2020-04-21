@@ -2,5 +2,16 @@
     <string name="app_name">LTI Monitoring</string>
     <string name="rekap_presensi">Rekap Presensi</string>
     <string name="buat_pengumuman">Buat Pengumuman</string>
-    <string name="daftar_mitra_kerja">Daftar Mitra Kerja</string>
+    <string name="daftar_mitra_kerja">Mitra Kerja</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mitra_kerja">Mitra Kerja</string>
+    <string name="welcome_administrator">Welcome, Administrator</string>
+    <string name="judul_pengumuman">Judul Pengumuman</string>
+    <string name="isi_pengumuman">Isi Pengumuman</string>
+    <string name="pengumuman">Pengumuman</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>
