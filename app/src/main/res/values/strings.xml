@@ -14,4 +14,23 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="dari_tanggal">Dari Tanggal</string>
+    <string name="sampai_tanggal">Sampai Tanggal</string>
+    <string name="rekap_presensi_mitra">Rekap Presensi Mitra</string>
+    <string name="kirim">Kirim</string>
+
+    <string-array name="bulan">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
 </resources>

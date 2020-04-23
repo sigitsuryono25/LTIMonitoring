@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mitra.RekapPresensiActivity"></activity>
         <activity android:name=".pengumuman.PengumumanActivity" />
         <activity android:name=".mitra.MitraKerjaActivity" />
         <activity android:name=".rekap.RekapActivity" />

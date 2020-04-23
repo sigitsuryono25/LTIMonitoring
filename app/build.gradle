@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.auto.surelabs.ltimonitoring"
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -66,4 +66,7 @@ dependencies {
 
     // Add the SDK for Firebase Cloud Messaging
     implementation 'com.google.firebase:firebase-messaging:20.1.3'
+
+    //date time picker
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 }

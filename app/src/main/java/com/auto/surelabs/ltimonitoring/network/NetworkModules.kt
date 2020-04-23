@@ -1,5 +1,7 @@
 package com.auto.surelabs.ltimonitoring.network
 
+import com.auto.surelabs.ltimonitoring.dataclass.ipaddress.ResponseIp
+import com.auto.surelabs.ltimonitoring.dataclass.login.ResponseLogin
 import com.auto.surelabs.ltimonitoring.dataclass.notification.Notification
 import com.auto.surelabs.ltimonitoring.dataclass.rekap.ResponseRekap
 import okhttp3.OkHttpClient
@@ -9,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
-class NetworkModules() {
+class NetworkModules {
     private val bASEURL = "https://www.lauwba.com/411/index.php/"
     private val BASEURLFCM = "https://fcm.googleapis.com/"
 
@@ -59,5 +61,32 @@ class NetworkModules() {
         )
         @POST("fcm/send")
         fun actionSendService(@Body notificationService: Notification): retrofit2.Call<ResponseBody>
+
+        @GET("http://www.ip-api.com/json")
+        fun getIPAddress(): retrofit2.Call<ResponseIp>
+
+        @FormUrlEncoded
+        @POST("presensi/loginadmin")
+        fun doLoginAdmin(
+            @Field("username") username: String?,
+            @Field("password") password: String?,
+            @Field("ip") ip: String?,
+            @Field("useragent") useragent: String?,
+            @Field("country") country: String?,
+            @Field("city") city: String?,
+            @Field("isp") isp: String?,
+            @Field("lat") lat: Double?,
+            @Field("lon") lon: Double?,
+            @Field("timezone") timezone: String?,
+            @Field("countrycode") countrycode: String?
+        ): retrofit2.Call<ResponseLogin>
+
+        @FormUrlEncoded
+        @POST("presensi/insert_pengumuman")
+        fun insertPengumuman(
+            @Field("judul") judul: String?,
+            @Field("isi") isi: String?,
+            @Field("broadcaston") broadcaston: String?
+        ): retrofit2.Call<ResponseLogin>
     }
 }

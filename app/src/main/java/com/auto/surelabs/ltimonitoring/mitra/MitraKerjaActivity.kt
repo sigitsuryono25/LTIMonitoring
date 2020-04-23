@@ -12,6 +12,7 @@ import com.auto.surelabs.ltimonitoring.R
 import com.auto.surelabs.ltimonitoring.dataclass.rekap.ResponseRekap
 import com.auto.surelabs.ltimonitoring.mitra.adapter.AdapterMitra
 import com.auto.surelabs.ltimonitoring.network.NetworkModules
+import com.auto.surelabs.ltimonitoring.utils.AlertDialog
 import com.auto.surelabs.ltimonitoring.utils.Constant
 import kotlinx.android.synthetic.main.activity_mitra_kerja.*
 import retrofit2.Call
@@ -32,7 +33,6 @@ class MitraKerjaActivity : AppCompatActivity() {
             swipeLayout.isRefreshing = true
             getListMitra()
         }
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -68,7 +68,9 @@ class MitraKerjaActivity : AppCompatActivity() {
                             val rvMitra =
                                 this@MitraKerjaActivity.findViewById<RecyclerView>(R.id.rvMitra)
                             val data = response.body()?.data
-                            val adapter = AdapterMitra(data)
+                            val adapter = AdapterMitra(data) {
+                                AlertDialog(this@MitraKerjaActivity)
+                            }
                             rvMitra.layoutManager = GridLayoutManager(
                                 this@MitraKerjaActivity,
                                 Constant.calculateNoOfColumns(this@MitraKerjaActivity, 100F)
@@ -95,4 +97,5 @@ class MitraKerjaActivity : AppCompatActivity() {
 
             })
     }
+
 }
