@@ -26,7 +26,7 @@ class PengumumanActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-        button.setOnClickListener {
+        btnKirim.setOnClickListener {
             if (judulPengumuman.text?.isEmpty() == true || isi.text?.isEmpty() == true) {
                 Toast.makeText(
                     this@PengumumanActivity,
@@ -34,8 +34,11 @@ class PengumumanActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-
+                btnKirim.isEnabled = false
+                btnKirim.text = getString(R.string.sending_notice)
+                val idPengumuman = HourToMillis.millis().toString()
                 val body = PengumumanItem(
+                    id = idPengumuman,
                     judul = judulPengumuman.text.toString(),
                     isi = isi.text.toString(),
                     broadcaston = HourToMillis.millisToDate(HourToMillis.millis(), "yyyy-MM-dd")
@@ -43,9 +46,11 @@ class PengumumanActivity : AppCompatActivity() {
 
                 val notification = Notification()
                 notification.token = "/topics/pengumuman"
+//                notification.token = "/topics/pengumumandebug"
                 notification.body = body
 
                 NetworkModules().getService().insertPengumuman(
+                    idPengumuman = idPengumuman,
                     judul = judulPengumuman.text.toString(),
                     isi = isi.text.toString(),
                     broadcaston = HourToMillis.millisToDate(HourToMillis.millis(), "yyyy-MM-dd")
@@ -59,8 +64,6 @@ class PengumumanActivity : AppCompatActivity() {
                     ) {
                         if (response.body()?.code == 200) {
                             pushNotif(notification)
-                        } else {
-
                         }
                     }
 
@@ -94,6 +97,11 @@ class PengumumanActivity : AppCompatActivity() {
                             .setMessage("Pengumuman Berhasil Disebarkan")
                             .setPositiveButton("Okay") { d, _ ->
                                 d.dismiss()
+                                judulPengumuman.setText("")
+                                isi.setText("")
+                                btnKirim.isEnabled = true
+                                btnKirim.text = resources.getString(R.string.kirim_pengumuman)
+
                             }
                             .create()
                             .show()

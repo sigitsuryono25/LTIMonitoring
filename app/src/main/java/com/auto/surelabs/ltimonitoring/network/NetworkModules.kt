@@ -4,6 +4,7 @@ import com.auto.surelabs.ltimonitoring.dataclass.ipaddress.ResponseIp
 import com.auto.surelabs.ltimonitoring.dataclass.login.ResponseLogin
 import com.auto.surelabs.ltimonitoring.dataclass.notification.Notification
 import com.auto.surelabs.ltimonitoring.dataclass.rekap.ResponseRekap
+import com.auto.surelabs.ltimonitoring.dataclass.rekappresensiuser.ResponseRekapPresensi
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
@@ -84,9 +85,25 @@ class NetworkModules {
         @FormUrlEncoded
         @POST("presensi/insert_pengumuman")
         fun insertPengumuman(
+            @Field("id-pengumuman") idPengumuman: String?,
             @Field("judul") judul: String?,
             @Field("isi") isi: String?,
             @Field("broadcaston") broadcaston: String?
         ): retrofit2.Call<ResponseLogin>
+
+        @FormUrlEncoded
+        @POST("presensi/rekap_presensi_range")
+        fun rekapPresensiRange(
+            @Field("start-date") startDate: String?,
+            @Field("end-date") endDate: String?,
+            @Field("username") username: String?
+        ): retrofit2.Call<ResponseRekapPresensi>
+
+        @FormUrlEncoded
+        @POST("presensi/rekap_presensi_bulan")
+        fun rekapPresensiBulan(
+            @Field("tanggal") bulan: String?,
+            @Field("username") username: String?
+        ): retrofit2.Call<ResponseRekapPresensi>
     }
 }

@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_marginTop="8dp"
+
             android:gravity="top|start"
             android:hint="@string/isi_pengumuman"
             app:boxStrokeColor="@color/colorPrimary">
@@ -41,19 +42,20 @@
                 android:id="@+id/isi"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:inputType="textMultiLine"
                 android:gravity="top|start"
-                android:inputType="text" />
+                android:maxLines="10" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnKirim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/colorAccent"
-            android:text="Kirim Pengumuman"
+            android:text="@string/kirim_pengumuman"
             tools:layout_editor_absoluteX="226dp"
             tools:layout_editor_absoluteY="126dp" />
 

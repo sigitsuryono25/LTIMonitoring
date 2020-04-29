@@ -48,6 +48,13 @@ object HourToMillis {
         return sdf.format(c.time)
     }
 
+    fun millisToPattern(millis: Long, pattern: String): String {
+        val sdf = SimpleDateFormat(pattern, Locale.ENGLISH)
+        val c = Calendar.getInstance()
+        c.timeInMillis = millis
+        return sdf.format(c.time)
+    }
+
     fun millisToMonth(milis: Long): String {
         val sdf = SimpleDateFormat("MM", Locale.ENGLISH)
         val c = Calendar.getInstance()

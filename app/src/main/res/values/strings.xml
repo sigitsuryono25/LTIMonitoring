@@ -18,6 +18,10 @@
     <string name="sampai_tanggal">Sampai Tanggal</string>
     <string name="rekap_presensi_mitra">Rekap Presensi Mitra</string>
     <string name="kirim">Kirim</string>
+    <string name="sending_notice">Mengirimkan Pengumuman....</string>
+    <string name="kirim_pengumuman">Kirim Pengumuman</string>
+    <string name="date">%1$d-%2$s-%3$s</string>
+    <string name="dp">Datepickerdialog</string>
 
     <string-array name="bulan">
         <item>Januari</item>

@@ -6,6 +6,6 @@ import com.google.gson.annotations.SerializedName
 class Notification {
     @SerializedName("to")
     var token: String? = null
-    @SerializedName("notification")
+    @SerializedName("data")
     var body: PengumumanItem? = null
 }

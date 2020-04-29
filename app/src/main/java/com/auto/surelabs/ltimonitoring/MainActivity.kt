@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import com.auto.surelabs.ltimonitoring.mitra.MitraKerjaActivity
 import com.auto.surelabs.ltimonitoring.pengumuman.PengumumanActivity
 import com.auto.surelabs.ltimonitoring.rekap.RekapActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         preferences = getSharedPreferences(application.packageName, Context.MODE_PRIVATE)
-
+        welcome.text = "Welcome, ${preferences.getString("nama", "User")}"
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

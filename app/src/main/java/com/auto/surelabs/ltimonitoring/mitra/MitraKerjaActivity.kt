@@ -69,7 +69,7 @@ class MitraKerjaActivity : AppCompatActivity() {
                                 this@MitraKerjaActivity.findViewById<RecyclerView>(R.id.rvMitra)
                             val data = response.body()?.data
                             val adapter = AdapterMitra(data) {
-                                AlertDialog(this@MitraKerjaActivity)
+                                AlertDialog(this@MitraKerjaActivity, it?.username)
                             }
                             rvMitra.layoutManager = GridLayoutManager(
                                 this@MitraKerjaActivity,
