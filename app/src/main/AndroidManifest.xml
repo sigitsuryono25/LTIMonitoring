@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mitra.rekapmitra.RekapPresensiMitraActivity"></activity>
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".NewMainActivity" />
+        <activity android:name=".mitra.rekapmitra.RekapPresensiMitraActivity" />
         <activity android:name=".pengumuman.PengumumanActivity" />
         <activity android:name=".mitra.MitraKerjaActivity" />
         <activity android:name=".rekap.RekapActivity" />
@@ -20,13 +28,16 @@
         <activity
             android:name=".LoginActivity"
             android:noHistory="true"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppTheme.NoActionBar" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <service
+            android:name=".services.FirebaseMessagingServices"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </activity>
+        </service>
     </application>
 
 </manifest>

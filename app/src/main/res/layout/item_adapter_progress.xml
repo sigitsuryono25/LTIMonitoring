@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.rekap.adapter.AdapterProgress">
+
+    <LinearLayout
+        android:id="@+id/containerKelas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Progress Kelas"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/black" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/jamPelaksanaan"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/ngajarSiapa"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/progressKelas"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerProject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Progress Project"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/black" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/projectSiapa"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/progressProject"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/containerLainnya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Progress Lainnya"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/black" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/progressLainnya"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content" />-->
+    </LinearLayout>
+
+</LinearLayout>

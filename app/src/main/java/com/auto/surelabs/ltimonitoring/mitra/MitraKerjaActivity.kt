@@ -42,8 +42,8 @@ class MitraKerjaActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun getListMitra() {
-        NetworkModules().getService().getListMitra()
+    private fun getListMitra(by: String? = "mitra") {
+        NetworkModules().getService().getListMitra(by = by)
             .enqueue(object : retrofit2.Callback<ResponseRekap> {
                 override fun onFailure(call: Call<ResponseRekap>, t: Throwable) {
                     if (swipeLayout.isRefreshing)

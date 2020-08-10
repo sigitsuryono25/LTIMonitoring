@@ -1,8 +1,10 @@
 package com.auto.surelabs.ltimonitoring.network
 
+import com.auto.surelabs.ltimonitoring.dataclass.admin.Admin
 import com.auto.surelabs.ltimonitoring.dataclass.ipaddress.ResponseIp
 import com.auto.surelabs.ltimonitoring.dataclass.login.ResponseLogin
 import com.auto.surelabs.ltimonitoring.dataclass.notification.Notification
+import com.auto.surelabs.ltimonitoring.dataclass.progress.ResponseProgress
 import com.auto.surelabs.ltimonitoring.dataclass.rekap.ResponseRekap
 import com.auto.surelabs.ltimonitoring.dataclass.rekappresensiuser.ResponseRekapPresensi
 import okhttp3.OkHttpClient
@@ -54,7 +56,7 @@ class NetworkModules {
         fun getDetailRecap(@Query("date") date: String?): retrofit2.Call<ResponseRekap>
 
         @GET("Presensi/get_list_mitra")
-        fun getListMitra(): retrofit2.Call<ResponseRekap>
+        fun getListMitra(@Query("by") by: String?): retrofit2.Call<ResponseRekap>
 
         @Headers(
             "Content-Type:application/json",
@@ -66,20 +68,9 @@ class NetworkModules {
         @GET("http://www.ip-api.com/json")
         fun getIPAddress(): retrofit2.Call<ResponseIp>
 
-        @FormUrlEncoded
         @POST("presensi/loginadmin")
         fun doLoginAdmin(
-            @Field("username") username: String?,
-            @Field("password") password: String?,
-            @Field("ip") ip: String?,
-            @Field("useragent") useragent: String?,
-            @Field("country") country: String?,
-            @Field("city") city: String?,
-            @Field("isp") isp: String?,
-            @Field("lat") lat: Double?,
-            @Field("lon") lon: Double?,
-            @Field("timezone") timezone: String?,
-            @Field("countrycode") countrycode: String?
+            @Body admin: Admin
         ): retrofit2.Call<ResponseLogin>
 
         @FormUrlEncoded
@@ -105,5 +96,12 @@ class NetworkModules {
             @Field("tanggal") bulan: String?,
             @Field("username") username: String?
         ): retrofit2.Call<ResponseRekapPresensi>
+
+        @FormUrlEncoded
+        @POST("presensi/get_progress")
+        fun getProgress(
+            @Field("username") username: String?,
+            @Field("tanggal") date: String?
+        ): retrofit2.Call<ResponseProgress>
     }
 }

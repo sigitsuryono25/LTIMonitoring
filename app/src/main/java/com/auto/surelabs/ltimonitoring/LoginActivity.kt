@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.auto.surelabs.ltimonitoring.dataclass.admin.Admin
 import com.auto.surelabs.ltimonitoring.dataclass.ipaddress.ResponseIp
 import com.auto.surelabs.ltimonitoring.dataclass.login.ResponseLogin
 import com.auto.surelabs.ltimonitoring.network.NetworkModules
@@ -22,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         preferences = getSharedPreferences(application.packageName, Context.MODE_PRIVATE)
         if (preferences.contains("idAdmin")) {
@@ -79,18 +79,22 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun getUserDetail(username: String, password: String, body: ResponseIp?) {
+        val admin = Admin()
+        admin.username = username
+        admin.password = password
+        admin.city = body?.city
+        admin.country = body?.country
+        admin.countryCode = body?.countryCode
+        admin.ip = body?.query
+        admin.isp = body?.isp
+        admin.lat = body?.lat
+        admin.lon = body?.lon
+        admin.timezone = body?.timezone
+        admin.userAgent =
+            "Android/${Build.DEVICE}/${Build.MODEL}/${Build.PRODUCT}/${Build.FINGERPRINT}/${Build.VERSION.SDK_INT}"
+
         NetworkModules().getService().doLoginAdmin(
-            username = username,
-            password = password,
-            city = body?.city,
-            country = body?.country,
-            countrycode = body?.countryCode,
-            ip = body?.query,
-            isp = body?.isp,
-            lat = body?.lat,
-            lon = body?.lon,
-            timezone = body?.timezone,
-            useragent = "Android/${Build.DEVICE}/${Build.MODEL}/${Build.PRODUCT}/${Build.FINGERPRINT}/${Build.VERSION.SDK_INT}"
+            admin
         ).enqueue(object : retrofit2.Callback<ResponseLogin> {
             override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
                 Log.e("ERROR", t.message.toString())
