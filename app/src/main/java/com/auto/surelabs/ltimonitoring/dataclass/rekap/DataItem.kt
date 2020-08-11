@@ -20,5 +20,14 @@ data class DataItem(
     val masuk: String? = null,
 
     @field:SerializedName("username")
-    val username: String? = null
+    val username: String? = null,
+
+    @field:SerializedName("tanggal")
+    val tanggal: String? = null,
+
+    @field:SerializedName("status")
+    val status: String? = null,
+
+    @field:SerializedName("libur")
+    val libur: String? = null
 )

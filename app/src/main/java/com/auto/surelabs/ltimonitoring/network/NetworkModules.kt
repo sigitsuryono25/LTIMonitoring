@@ -103,5 +103,14 @@ class NetworkModules {
             @Field("username") username: String?,
             @Field("tanggal") date: String?
         ): retrofit2.Call<ResponseProgress>
+
+        @GET("presensi/get_mitra_online")
+        fun getOnlineMitra(@Query("tanggal") tanggal: String?): retrofit2.Call<ResponseRekap>
+
+        @GET("presensi/get_log_presensi")
+        fun getLogPresensi(): retrofit2.Call<ResponseRekap>
+
+        @GET("presensi/get_libur_mitra")
+        fun getLiburMitra(): retrofit2.Call<ResponseRekap>
     }
 }

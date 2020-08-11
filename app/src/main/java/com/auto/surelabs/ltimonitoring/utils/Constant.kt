@@ -17,4 +17,6 @@ object Constant {
         val screenWidthDp = displayMetrics.widthPixels / displayMetrics.density
         return (screenWidthDp / columnWidthDp + 0.5).toInt()
     }
+
+    val day = listOf("Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu")
 }

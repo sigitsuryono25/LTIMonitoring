@@ -120,6 +120,55 @@ class Repo {
             })
     }
 
+    fun getOnlineMitra(
+        date: String?,
+        success: (Response<ResponseRekap>) -> Unit,
+        error: (Throwable) -> Unit
+    ) {
+        api.getOnlineMitra(date).enqueue(object : retrofit2.Callback<ResponseRekap> {
+            override fun onFailure(call: Call<ResponseRekap>, t: Throwable) {
+                error(t)
+            }
+
+            override fun onResponse(call: Call<ResponseRekap>, response: Response<ResponseRekap>) {
+                success(response)
+            }
+
+        })
+    }
+
+    fun getLogPresensi(
+        success: (Response<ResponseRekap>) -> Unit,
+        error: (Throwable) -> Unit
+    ) {
+        api.getLogPresensi().enqueue(object : retrofit2.Callback<ResponseRekap> {
+            override fun onFailure(call: Call<ResponseRekap>, t: Throwable) {
+                error(t)
+            }
+
+            override fun onResponse(call: Call<ResponseRekap>, response: Response<ResponseRekap>) {
+                success(response)
+            }
+
+        })
+    }
+
+    fun getLiburMitra(
+        success: (Response<ResponseRekap>) -> Unit,
+        error: (Throwable) -> Unit
+    ) {
+        api.getLiburMitra().enqueue(object : retrofit2.Callback<ResponseRekap> {
+            override fun onFailure(call: Call<ResponseRekap>, t: Throwable) {
+                error(t)
+            }
+
+            override fun onResponse(call: Call<ResponseRekap>, response: Response<ResponseRekap>) {
+                success(response)
+            }
+
+        })
+    }
+
     fun rekapPresensiBulan(
         bulan: String?,
         username: String?,

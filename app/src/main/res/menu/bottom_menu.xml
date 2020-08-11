@@ -14,11 +14,11 @@
         android:icon="@drawable/ic_mitra"
         android:title="@string/mitra_kerja" />
     <item
-        android:id="@+id/pengumuman"
+        android:id="@+id/register"
         android:icon="@drawable/ic_pengumuman"
-        android:title="@string/pengumuman" />
+        android:title="@string/pendaftar" />
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/settings" />
+        android:icon="@drawable/ic_others"
+        android:title="@string/lainnya" />
 </menu>

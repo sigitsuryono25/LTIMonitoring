@@ -7,7 +7,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mitra_kerja">Mitra</string>
-    <string name="welcome_administrator">Welcome, Administrator</string>
+    <string name="welcome_administrator">Welcome, %1$s</string>
     <string name="judul_pengumuman">Judul Pengumuman</string>
     <string name="isi_pengumuman">Isi Pengumuman</string>
     <string name="pengumuman">Pengumuman</string>
@@ -26,6 +26,14 @@
     <string name="settings">Pengaturan</string>
     <string name="something_wrong">Something wrong</string>
     <string name="jam_pelaksanaan">Pelaksanaan: %1$s-%2$s</string>
+    <string name="mitra_online">Mitra Masuk</string>
+    <string name="presensi_terbaru">Presensi Terbaru</string>
+    <string name="permintaan_cuti">Permintaan Cuti</string>
+    <string name="no_data">Tidak ada data</string>
+    <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
+    <string name="pendaftar">Pendaftar</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="hari_libur_mitra">Hari Libur Mitra</string>
 
     <string-array name="bulan">
         <item>Januari</item>
